@@ -17,16 +17,41 @@ body {
     MAIN
 --------------------------*/
 
+
+/*____ASIDE MENU____*/
+
 main {
     background-color: black;
     width: 100%;
     height: calc(100vh - 6.25rem);
 }
 
+.aside-menu-small {
+    background-color: aliceblue;
+    display: none;
+    width: 3.125rem;
+    height: calc(100vh - 6.25rem);
+}
+
 .aside-menu {
     width: 14.0625rem;
     height: calc(100vh - 6.25rem);
+    padding-left: 1.25rem;
 }
+
+.aside-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-menu ul a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*____MAIN MENU____*/
 
 .main-menu {
     background-color: rgba(20,25,34,255);
@@ -65,6 +90,8 @@ main {
     justify-content: center;
 }
 
+
+
 .main-menu .container .col-1-6 h5 {
     padding: 1.25rem .625rem 2.5rem .625rem;
 }
@@ -90,9 +117,7 @@ main {
 .song {
     width: calc((100% / 6) - 1.25rem);
     margin: 0 .625rem;
-   
-    
-    
+  
 }
 
 .playlists {
@@ -147,13 +172,92 @@ footer .container {
     RESPONSIVE
 --------------------------*/
 
-/*MOBILE MIN WIDTH */
 
 
-/*TABLET MIN WIDTH */
+/*-----TABLET MAX WIDTH 1100PX------*/
+
+@media screen and (max-width: 1100px) {
+    
+    /*-------------------------
+             MAIN
+    --------------------------*/
+
+    .main-menu .container {
+        flex-wrap: wrap;
+    }
+    
+    .songs-playlists .col-1-6 {
+        min-width: fit-content;
+        
+    }
+
+    .main-menu .container .col-1-6 h5 {
+        padding-bottom: .625rem;
+    }
+
+    .song {
+        width: calc((100% / 4) - 1.25rem);
+        margin-bottom: 1.25rem;
+    }
+
+    .playlists .col-1-2 {
+        width: calc((100% / 4) - 1.25rem);
+    }
+    
+    .artists .col-1-2 {
+        width: calc((100% / 4) - 1.25rem);
+        
+    }
+
+}
 
 
-/*DESKTOP MIN WIDTH*/
+
+/*------MOBILE S MAX WIDTH 700PX-----*/
+
+@media screen and (max-width: 700px) {
+
+    .song {
+        width: calc((100% / 2) - 1.25rem);
+    }
+
+    .playlists .col-1-2 {
+        width: calc((100% / 2) - 1.25rem);
+    }
+    
+    .artists .col-1-2 {
+        width: calc((100% / 2) - 1.25rem);
+        
+    }
+
+}
+    
+
+/*------MOBILE XS MAX WIDTH 600PX----*/
+
+@media screen and (max-width: 600px){
+
+    .aside-menu {
+        display: none;
+    }
+
+    .main-menu {
+        width: calc(100vw - 3.125rem)
+    }
+
+    .aside-menu-small {
+        display: block;
+    }
+}
+
+/*------MOBILE S MAX WIDTH 400PX-----*/
+
+@media screen and (max-width: 400px) {
+
+    
+}
+
+
 
 
 /*-------------------------
@@ -165,6 +269,11 @@ footer .container {
 
 .debug .aside-menu {
     border: 2px dashed white;
+    color: white;
+}
+
+.debug .aside-menu  * {
+    padding-bottom: .625rem;
 }
 
 .debug .main-menu .container {
