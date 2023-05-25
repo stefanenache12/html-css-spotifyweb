@@ -6,9 +6,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.conteiner {
+.container {
     display: flex;
-    flex-wrap: nowrap;
 }
 
 
@@ -32,12 +31,93 @@ main {
 .main-menu {
     background-color: rgba(20,25,34,255);
     width: calc(100% - 14.0625rem);
+    height: calc(100vh - 6.25rem);
+    overflow: scroll;
+    
 }
 
 .header-main-menu {
     width: 100%;
     background-color: rgba(8,11,18,255);
-    opacity: 0.5;
+    text-align: end;
+    position: sticky;
+    top: 0;
+}
+
+
+
+.button-style {
+    background-color: rgba(8,11,18,255);
+    color: white;
+    border: 2px solid white;
+    border-radius: 1.25rem;
+    padding: .75rem 2.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 1.5625rem .312rem;
+}
+
+.songs-playlists {
+    padding: 0 1.25rem;
+}
+
+.main-menu .container {
+    justify-content: center;
+}
+
+.main-menu .container .col-1-6 h5 {
+    padding: 1.25rem .625rem 2.5rem .625rem;
+}
+
+.main-menu h2 {
+    color: white;
+}
+
+.main-menu h6 {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 1.25rem;
+}
+
+.recently-played {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1.875rem 0;
+    margin: 0 -0.625rem;
+}
+
+.song {
+    width: calc((100% / 6) - 1.25rem);
+    margin: 0 .625rem;
+   
+    
+    
+}
+
+.playlists {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.playlists .col-1-2 {
+    width: calc((100% / 6) - 1.25rem);
+    margin-right: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.875rem;
+}
+
+
+.artists {
+    display: flex;
+}
+
+.artists .col-1-2 {
+    width: calc((100% / 6) - 1.25rem);
+    margin-right: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.875rem;
+
 }
 
 
@@ -52,7 +132,7 @@ footer {
     
 }
 
-footer .conteiner {
+footer .container {
     height: 6.25rem;
 }
 
@@ -87,9 +167,24 @@ footer .conteiner {
     border: 2px dashed white;
 }
 
-.debug .header-main-menu {
-    border: 2px dashed white;
-    height: 5.625rem;
+.debug .main-menu .container {
+    color: white;
+}
+
+.debug .song {
+    height: 250px;
+    border: 2px solid white;
+    
+}
+
+.debug .playlists .col-1-2 {
+    height: 250px;
+    border: 2px solid white;
+}
+
+.debug .artists .col-1-2 {
+    height: 250px;
+    border: 2px solid white;
 }
 
 /*FOOTER*/
