@@ -11,11 +11,6 @@ body {
 }
 
 
-.gray-color {
-    color: rgb(163, 163, 163);
-}
-
-
 
 /*-------------------------
     MAIN
@@ -32,12 +27,18 @@ main {
 /*____ASIDE MENU____*/
 
 
+
+/*ASIDE MENU SMALL FOR RESPONSIVE UNDER 600PX*/
+
 .aside-menu-small {
     background-color: aliceblue;
     display: none;
     width: 3.125rem;
     height: calc(100vh - 6.25rem);
 }
+
+
+/*ASIDE MENU BIG FOR RESPONSIVE > THAN 600PX*/
 
 .aside-menu {
     width: 14.0625rem;
@@ -114,14 +115,15 @@ main {
 }
 
 
-
-
 .client-name {
     position: relative;
     z-index: 0;
 }
 
+
+
 /*____MAIN MENU____*/
+
 
 .main-menu {
     background-color: rgba(20,25,34,255);
@@ -131,35 +133,89 @@ main {
     
 }
 
+
+/*THE HEADER OF THE MAIN MENU WITH THE UPGRADE BUTTON*/
+
 .header-main-menu {
     width: 100%;
-    background-color: rgba(8,11,18,255);
+    background-color: rgba(8, 11, 18, 0.5);
     text-align: end;
     position: sticky;
     top: 0;
+    z-index: 99;
 }
 
+
 .button-style {
-    background-color: rgba(8,11,18,255);
+    background-color: transparent;
     color: white;
     border: 2px solid white;
     border-radius: 1.25rem;
     padding: .75rem 2.8rem;
     font-size: 0.8rem;
     font-weight: 600;
-    margin: 1.5625rem .312rem;
+    margin: 1.5625rem .9375rem;
+    opacity: 1;
 }
 
+.header-main-menu button:hover {
+    transform: scale(1.1);
+}
+    
 
-.recently-played .song {
+/*MENU TOP ON THE MAIN IN EVIDENZA/PODCAST...ETC*/
+
+.main-menu .container {
+    color: rgb(163, 163, 163);
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.main-menu .container .col-1-6 h5 {
+    padding: 0 .625rem;
+}
+
+.main-menu .container .col-1-6 h5:hover {
+    color: white;
+}
+
+.col-1-6 h5 {
+    position: relative;
+    padding: 0.5rem 0.5rem;
+}
+  
+.col-1-6 h5::before {
+    width: 80%;
+    
+}
+
+.col-1-6 h5:hover::before {
+    content: "";
+    position: absolute;
+    bottom: -0.625rem;
+    height: 2px; 
+    background-color: green; 
+    z-index: 1; 
+}
+
+  
+
+
+/*RECENTLY PLAYED SECTION*/
+
+.recently-played .song, .playlists, .artists {
     text-align: center;
 }
 
-.recently-played .song img {
+.main-menu img {
     width: 100%;
 }
 
-.recently-played .song h3{
+.main-menu .container {
+    justify-content: center;
+}
+
+.recently-played .song h3, .playlists h3, .artists h3{
     color: white;
     padding-top: .625rem;
 }
@@ -172,22 +228,12 @@ main {
     padding: 0 1.25rem;
 }
 
-.main-menu .container {
-    justify-content: center;
-}
-
-
-
-.main-menu .container .col-1-6 h5 {
-    padding: 1.25rem .625rem 2.5rem .625rem;
-}
-
 .main-menu h2 {
     color: white;
 }
 
 .main-menu h6 {
-    color: white;
+    color: rgb(163, 163, 163);
     padding-top: 10px;
     padding-bottom: 1.25rem;
 }
@@ -205,8 +251,46 @@ main {
     margin: 0 .625rem;
     min-width: 10.625rem;
     margin-bottom: 1.25rem;
+    
   
 }
+
+
+/*OVERLAY ON THE SONGS*/
+
+
+.overlay-container {
+    position: relative;
+}
+
+.overlay-icon {
+    color: white;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+#overlay {
+    position: absolute; 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2; 
+    cursor: pointer; 
+}
+
+.song:hover #overlay {
+    display: inline-block;
+}
+
+
+/*PLAYLISTS CREATED FOR THE CLIENT*/
 
 .playlists {
     display: flex;
@@ -221,6 +305,8 @@ main {
 }
 
 
+/*ARTISTS SECTION*/
+
 .artists {
     display: flex;
 }
@@ -230,7 +316,11 @@ main {
     margin-right: 1.25rem;
     margin-top: 1.25rem;
     margin-bottom: 1.875rem;
+}
 
+.artists img {
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 
@@ -282,7 +372,7 @@ footer .container {
     }
 
     .main-menu .container .col-1-6 h5 {
-        padding-bottom: .625rem;
+        margin-bottom: 1.25rem;
     }
 
     .song {
@@ -364,20 +454,8 @@ footer .container {
 
 
 
-.debug .main-menu .container {
-    color: white;
-}
 
 
-.debug .playlists .col-1-2 {
-    height: 250px;
-    border: 2px solid white;
-}
-
-.debug .artists .col-1-2 {
-    height: 250px;
-    border: 2px solid white;
-}
 
 /*FOOTER*/
 
