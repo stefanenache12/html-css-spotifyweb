@@ -11,6 +11,10 @@ body {
 }
 
 
+.gray-color {
+    color: rgb(163, 163, 163);
+}
+
 
 
 /*-------------------------
@@ -18,13 +22,15 @@ body {
 --------------------------*/
 
 
-/*____ASIDE MENU____*/
-
 main {
     background-color: black;
     width: 100%;
     height: calc(100vh - 6.25rem);
 }
+
+
+/*____ASIDE MENU____*/
+
 
 .aside-menu-small {
     background-color: aliceblue;
@@ -37,6 +43,23 @@ main {
     width: 14.0625rem;
     height: calc(100vh - 6.25rem);
     padding-left: 1.25rem;
+    position: relative;
+}
+
+.aside-menu .logo img {
+    width: 70%;
+    padding-bottom: 1.25rem;
+}
+
+.aside-menu-top img {
+    width: 13%;
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: .625rem;
+}
+
+.library {
+    padding-bottom: 1.25rem;
 }
 
 .aside-menu ul {
@@ -47,9 +70,56 @@ main {
 
 .aside-menu ul a {
     text-decoration: none;
+    color: rgb(163, 163, 163);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.aside-menu ul a:hover {
     color: white;
 }
 
+.aside-menu-bottom > *{
+    padding-bottom: .625rem;
+}
+
+#new-playlist {
+    color: rgb(163, 163, 163);;
+}
+
+.playlist-aside-menu {
+    height: calc(50vh - 6.25rem);
+    overflow-y: auto;
+}
+
+.playlist-aside-menu ul > * {
+    padding-bottom: 1.25rem;
+}
+
+.new-playlist a {
+    text-decoration: none;
+    color: rgb(163, 163, 163);
+    font-size: 1rem;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.new-playlist a:hover, .hover-icon:hover {
+    color: white;
+}
+
+.new-playlist :first-child {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+.client-name {
+    position: relative;
+    z-index: 0;
+}
 
 /*____MAIN MENU____*/
 
@@ -57,7 +127,7 @@ main {
     background-color: rgba(20,25,34,255);
     width: calc(100% - 14.0625rem);
     height: calc(100vh - 6.25rem);
-    overflow: scroll;
+    overflow-y: auto;
     
 }
 
@@ -80,6 +150,10 @@ main {
     font-size: 0.8rem;
     font-weight: 600;
     margin: 1.5625rem .312rem;
+}
+
+.recently-played .song img {
+    width: 12.5rem;
 }
 
 .songs-playlists {
@@ -117,6 +191,8 @@ main {
 .song {
     width: calc((100% / 6) - 1.25rem);
     margin: 0 .625rem;
+    min-width: 10.625rem;
+    margin-bottom: 1.25rem;
   
 }
 
@@ -154,15 +230,17 @@ footer {
     background-color: rgba(40,40,40,255);
     width: 100%;
     height: 6.25rem;
-    
+    position: relative;
+    z-index: 99;
 }
 
 footer .container {
     height: 6.25rem;
+    justify-content: space-between;
+    color: white;
 }
 
 .col-1-3 {
-    width: calc(100% / 3);
     height: 100%;
 }
 
@@ -197,7 +275,6 @@ footer .container {
 
     .song {
         width: calc((100% / 4) - 1.25rem);
-        margin-bottom: 1.25rem;
     }
 
     .playlists .col-1-2 {
@@ -254,6 +331,10 @@ footer .container {
 
 @media screen and (max-width: 400px) {
 
+    .song {
+        margin: 1.25rem auto;
+    }
+
     
 }
 
@@ -267,14 +348,9 @@ footer .container {
 
 /*MAIN*/
 
-.debug .aside-menu {
-    border: 2px dashed white;
-    color: white;
-}
 
-.debug .aside-menu  * {
-    padding-bottom: .625rem;
-}
+
+
 
 .debug .main-menu .container {
     color: white;
