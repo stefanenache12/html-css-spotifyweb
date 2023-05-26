@@ -139,8 +139,6 @@ main {
     top: 0;
 }
 
-
-
 .button-style {
     background-color: rgba(8,11,18,255);
     color: white;
@@ -152,8 +150,22 @@ main {
     margin: 1.5625rem .312rem;
 }
 
+
+.recently-played .song {
+    text-align: center;
+}
+
 .recently-played .song img {
-    width: 12.5rem;
+    width: 100%;
+}
+
+.recently-played .song h3{
+    color: white;
+    padding-top: .625rem;
+}
+
+.recently-played .song h6{
+    color: rgb(163, 163, 163);
 }
 
 .songs-playlists {
@@ -356,11 +368,6 @@ footer .container {
     color: white;
 }
 
-.debug .song {
-    height: 250px;
-    border: 2px solid white;
-    
-}
 
 .debug .playlists .col-1-2 {
     height: 250px;
