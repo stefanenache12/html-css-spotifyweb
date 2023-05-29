@@ -23,6 +23,11 @@ main {
     height: calc(100vh - 6.25rem);
 }
 
+main > :first-child {
+    height: calc(100vh - 6.25rem); 
+    overflow: hidden;
+}
+
 
 /*____ASIDE MENU____*/
 
@@ -43,13 +48,14 @@ main {
 .aside-menu {
     width: 14.0625rem;
     height: calc(100vh - 6.25rem);
+    min-height: 600px;
     padding-left: 1.25rem;
     position: relative;
 }
 
 .aside-menu .logo img {
     width: 70%;
-    padding-bottom: 1.25rem;
+    padding: .625rem 0;
 }
 
 .aside-menu-top img {
@@ -81,7 +87,7 @@ main {
 }
 
 .aside-menu-bottom > *{
-    padding-bottom: .625rem;
+    padding-bottom: 1.25rem;
 }
 
 #new-playlist {
@@ -89,12 +95,12 @@ main {
 }
 
 .playlist-aside-menu {
-    height: calc(50vh - 6.25rem);
+    height: calc(60vh - 6.25rem);
     overflow-y: auto;
 }
 
 .playlist-aside-menu ul > * {
-    padding-bottom: 1.25rem;
+    padding-bottom: .625rem;
 }
 
 .new-playlist a {
@@ -116,10 +122,44 @@ main {
 
 
 .client-name {
-    position: relative;
+    position: absolute;
     z-index: 0;
+    color: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
+
+.client-name a {
+    text-decoration: none;
+    color: rgb(163, 163, 163);;
+}
+
+.client-name a:hover {
+    color: white;
+}
+
+.client-name hr {
+    margin: .625rem 0;
+}
+
+.client-name img {
+    width: 12%;
+    display: inline-block;
+    margin-right: .3125rem;
+    background-color: rgb(163, 163, 163);
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.client-name h3 {
+    display: inline-block;
+    font-size: 0.8rem;
+}
 
 
 /*____MAIN MENU____*/
@@ -166,30 +206,34 @@ main {
 /*MENU TOP ON THE MAIN IN EVIDENZA/PODCAST...ETC*/
 
 .main-menu .container {
-    color: rgb(163, 163, 163);
     padding-top: 20px;
     padding-bottom: 30px;
 }
 
-.main-menu .container .col-1-6 h5 {
-    padding: 0 .625rem;
+.main-menu .container .col-1-6 {
+    padding: 0 .9375rem;
 }
 
-.main-menu .container .col-1-6 h5:hover {
+.main-menu .container .col-1-6 a {
+    color: rgb(163, 163, 163);
+    text-decoration: none;
+}
+
+.main-menu .container .col-1-6 a:hover {
     color: white;
 }
 
-.col-1-6 h5 {
+.col-1-6 a {
     position: relative;
-    padding: 0.5rem 0.5rem;
+    
 }
   
-.col-1-6 h5::before {
-    width: 80%;
+.col-1-6 a::before {
+    width: 100%;
     
 }
 
-.col-1-6 h5:hover::before {
+.col-1-6 a:hover::before {
     content: "";
     position: absolute;
     bottom: -0.625rem;
@@ -286,6 +330,10 @@ main {
 }
 
 .song:hover #overlay {
+    display: inline-block;
+}
+
+.playlists .col-1-2:hover #overlay {
     display: inline-block;
 }
 
@@ -451,12 +499,26 @@ footer .center-footer-down h6 {
     font-size: 1.4rem;
 }
 
+footer  :nth-child(3) {
+    justify-content: end;
+}
+
+.right-footer-icons > * {
+    margin-right: .625rem;
+}
+
+.bar {
+    display: flex;
+    width: 30%;
+    align-items: center;
+}
 
 /*FOOTER ICONS HOVER*/
 
 
 .hover-icon:hover {
     color: white;
+    justify-content: end;
 }
 
 /*-------------------------
@@ -520,11 +582,11 @@ footer .center-footer-down h6 {
         
     }
 
-   .left-footer-icon {
+   /*.left-footer-icon {
         display: flex;
         flex-direction: column;
         margin-right: .625rem;
-    }
+    }*/
 
 }
     
@@ -551,14 +613,44 @@ footer .center-footer-down h6 {
     }
 }
 
+/*------MOBILE S MAX WIDTH 500PX-----*/
+
+@media screen and (max-width: 500px) {
+
+    .header-main-menu {
+        text-align: center;
+    }
+
+    .main-menu  h2,h6 {
+        text-align: center;
+    }
+
+    .song {
+        margin: 1.25rem auto;
+        min-width: 18.75rem;
+    }
+
+    .song-name-footer {
+        display: none;
+    }
+
+    .center-footer {
+        min-width: 12.5rem;
+    }
+    
+}
+
+
 /*------MOBILE S MAX WIDTH 400PX-----*/
 
 @media screen and (max-width: 400px) {
 
     .song {
         margin: 1.25rem auto;
+        min-width: 12.5rem;
     }
 
+    
     
 }
 
